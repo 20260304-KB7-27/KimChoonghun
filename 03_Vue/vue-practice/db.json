@@ -1,0 +1,55 @@
+{
+  "memo": [
+    {
+      "id": "a001",
+      "title": "첫 번째 메모",
+      "content": "메모1"
+    },
+    {
+      "id": "a002",
+      "title": "두 번째 메모",
+      "content": "메모2"
+    },
+    {
+      "id": "a003",
+      "title": "세 번째 메모",
+      "content": "메모3"
+    },
+    {
+      "id": "a004",
+      "title": "네 번째 메모",
+      "content": "메모4"
+    },
+    {
+      "title": "테테테테토리스",
+      "content": "테테테테테토테토",
+      "id": "dcnwrGtuhQk"
+    },
+    {
+      "title": "테스트테스트",
+      "content": "테테테테테테테테테ㅔ테",
+      "id": "jJRipfRxby4"
+    },
+    {
+      "title": "dasdasd",
+      "content": "dasdasdasdasdasdasdasd",
+      "id": "emSNaxiUrZo"
+    },
+    {
+      "title": "dasdasd",
+      "content": "asdasdasdasdasdasd",
+      "id": "BPmRn_9v-Iw"
+    },
+    {
+      "title": "ㅗㅗㅗㅗㅗㅗㅗ",
+      "content": "ㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗ",
+      "id": "Htu0XIrG1Yo"
+    },
+    {
+      "title": "",
+      "content": "",
+      "id": "XbX9rn3KOZ4"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

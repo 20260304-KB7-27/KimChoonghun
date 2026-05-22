@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/0aaf2ae9-c444-4eda-9889-f8b2094fef56/console_1.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/01_DB_INTRO/user.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/02_SQL기본/lecture/00_DML.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/02_SQL기본/lecture/01_SELECT.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/02_SQL기본/lecture/02_ORDER_BY.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/02_SQL기본/lecture/03_WHERE.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/02_SQL기본/lecture/04_Keyword.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/02_SQL기본/lecture/05_GROUP_BY.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/02_SQL기본/lecture/06_SUBQUERY.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+  </component>
+</project>
