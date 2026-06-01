@@ -38,7 +38,21 @@ public class TravelServiceImpl implements TravelService {
     */
     @Override
     public void printTravelsByDistrict() {
+        // 총 페이지 갯수
+        List<String> allDistricts = dao.getDistricts();
+        System.out.printf("지역 리스트\n");
+        for (String district:allDistricts) {
+            System.out.printf("%s\n", district);
+        }
 
+        // 사용자한테 입력 받기
+        String inputDistrict = getString(String.format("지역 선택: ", allDistricts));
+
+        // page대로 조회
+        List<TravelVO> travels = dao.getTravels(inputDistrict);
+
+        // 출력
+        printTravels(travels);
     }
 
     /*
@@ -68,6 +82,12 @@ public class TravelServiceImpl implements TravelService {
         Scanner sc = new Scanner(System.in);
         int num = Integer.parseInt(sc.nextLine());
         return num;
+    }
+
+    private String getString(String prompt) {
+        System.out.println(prompt);
+        Scanner sc = new Scanner(System.in);
+        return sc.nextLine();
     }
 
     /*
