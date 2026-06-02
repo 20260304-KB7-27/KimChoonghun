@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    XML
+
+-->
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 외부 설정파일 읽어오기 -->
+    <properties resource="application.properties" />
+
+    <settings>
+        <!-- 2차 캐시 사용 여부 -->
+        <setting name="cacheEnabled" value="false" />
+        <!-- 컬럼(DB)명을 필드명(Java)에 맞춰서 자동 변환 -->
+        <setting name="mapUnderscoreToCamelCase" value="true" />
+        <!-- insert시에 생성되는 (auto_increment) pk 값을 객체에 채울지 여부 -->
+        <setting name="useGeneratedKeys" value="false" />
+    </settings>
+
+    <typeAliases>
+        <typeAlias type="org.scoula.travel.domain.TravelVO" alias="TravelVO"/>
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <!-- 커넥션 풀 사용 -->
+            <dataSource type="POOLED">
+                <property name="driver"   value="${driver}" />
+                <property name="url"      value="${url}" />
+                <property name="username" value="${username}" />
+                <property name="password" value="${password}" />
+            </dataSource>
+        </environment>
+    </environments>
+    <!--
+        SQL Mapper XML 파일 등록
+    -->
+    <mappers>
+        <mapper resource="mapper/travel-mapper.xml"/>
+    </mappers>
+</configuration>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+Mapper.xml
+- 실행시킬 SQL 구문 작성 (Java 코드랑 분리)
+- SqlSessionFactory가 mybatis-config에 등록된 mapper를 읽음
+-->
+<mapper namespace="org.scoula.travel.dao.TravelDao">
+    <!--
+        namespace : dao 인터페이스의 전체 경로와 일치시키는 것이 관례
+        id : java 코드에서 호출할 SQL의 식별자
+        resultType : 반환 타입
+        parameterType : Java에서 전달받을 파라미터 클래스
+    -->
+    <select id="getTotalCount" resultType="int">
+        SELECT COUNT(*)
+        FROM tbl_travel
+    </select>
+
+    <select id="getTravels" resultType="org.scoula.travel.domain.TravelVO">
+        SELECT *
+        FROM tbl_travel t
+        WHERE t.no between #{start} and #{end}
+    </select>
+
+    <select id="getDistricts" resultType="String">
+        SELECT DISTINCT district
+        FROM tbl_travel t
+    </select>
+
+    <select id="getTravelsByDistrict" resultType="org.scoula.travel.domain.TravelVO">
+        SELECT *
+        FROM tbl_travel t
+        WHERE district = #{district}
+        order by title;
+    </select>
+
+    <select id="getTravel" resultType="org.scoula.travel.domain.TravelVO">
+        SELECT *
+        FROM tbl_travel t
+        WHERE no = #{no};
+    </select>
+
+    <!--
+        Insert
+        - parameterType : TravelVO 객체의 getter를 이용해서 가져옴
+    -->
+    <insert id="insert" parameterType="TravelVO">
+        insert into tbl_travel (no, district, title, description, address, phone)
+        values (#{no}, #{district}, #{title}, #{description}, #{address}, #{phone})
+    </insert>
+
+    <update id="update" parameterType="TravelVO">
+        UPDATE tbl_travel
+        SET
+            district = #{district},
+            title = #{title},
+            description = #{description},
+            address = #{address},
+            phone = #{phone}
+        WHERE no = #{no}
+    </update>
+
+    <delete id="remove">
+        DELETE FROM tbl_travel
+        WHERE no = #{no}
+    </delete>
+</mapper>
