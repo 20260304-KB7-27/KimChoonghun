@@ -1,6 +1,7 @@
 /* 사용자 계정 생성 + 권한 부여하기 */
 
 -- scoula_db DB(스키마) 생성
+drop database if exists scoula_db;
 create database scoula_db;
 
 drop user if exists 'scoula'@'%';

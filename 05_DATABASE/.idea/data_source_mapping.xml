@@ -10,5 +10,23 @@
     <file url="file://$PROJECT_DIR$/02_SQL기본/lecture/04_Keyword.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
     <file url="file://$PROJECT_DIR$/02_SQL기본/lecture/05_GROUP_BY.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
     <file url="file://$PROJECT_DIR$/02_SQL기본/lecture/06_SUBQUERY.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/03_SQL심화/03_builtin_function/01_String.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/03_SQL심화/03_builtin_function/02_Numeric.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/03_SQL심화/03_builtin_function/03_Date.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/03_SQL심화/03_builtin_function/04_Control.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/03_SQL심화/04_JOIN/02_OUTER_JOIN.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/03_SQL심화/04_JOIN/03_CROSS_JOIN.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/03_SQL심화/04_JOIN/04_SELF_JOIN.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/03_SQL심화/04_JOIN/05_UNION.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/03_SQL심화/04_JOIN/06_IN.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/03_SQL심화/basic/sqldb.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/03_SQL심화/lecture/01_auto_increment.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/03_SQL심화/lecture/02_delete_drop_truncate.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/04_TABLE_VIEW/01_tabledb/01_ddl.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/04_TABLE_VIEW/01_tabledb/02_dml.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/04_TABLE_VIEW/01_tabledb/03_ddl.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/04_TABLE_VIEW/01_tabledb/04_view.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/05_INDEX/lecture/02_index_employee.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
+    <file url="file://$PROJECT_DIR$/05_INDEX/lecture/04_user.sql" value="0aaf2ae9-c444-4eda-9889-f8b2094fef56" />
   </component>
 </project>

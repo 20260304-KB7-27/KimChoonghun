@@ -13,7 +13,7 @@ public class JDBCUtil {
         if(conn!= null) return conn;
 
         Properties prop = new Properties();
-        Connection con = null;
+//        Connection con = null;
 
         try {
             prop.load(JDBCUtil.class.getResourceAsStream("/application.properties"));
@@ -23,9 +23,9 @@ public class JDBCUtil {
 
             Class.forName(driver);
 
-            con = DriverManager.getConnection(url, prop);
-            System.out.println("연결성공 연결객체 con : " + con);
-            return con;
+            conn = DriverManager.getConnection(url, prop);
+            System.out.println("연결성공 연결객체 con : " + conn);
+            return conn;
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (SQLException e) {

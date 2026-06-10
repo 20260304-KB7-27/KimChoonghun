@@ -31,7 +31,7 @@ public class SessionSaveServlet extends HttpServlet {
 
         String value = request.getParameter("sessionValue");
 
-        // getSession() : 세션이 업승면 새로 생성 (JSESSIONID 쿠키 발급)
+        // getSession() : 세션이 없면 새로 생성 (JSESSIONID 쿠키 발급)
         HttpSession session = request.getSession();
 
         session.setAttribute("mySessionData", value);
