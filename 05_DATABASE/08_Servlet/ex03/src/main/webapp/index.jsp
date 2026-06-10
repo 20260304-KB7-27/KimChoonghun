@@ -1,0 +1,21 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSP - Hello World</title>
+</head>
+<body>
+<h1><%= "Hello World!" %>
+</h1>
+<br/>
+<a href="hello-servlet">Hello Servlet</a>
+<br/>
+<a href="main.jsp">main</a>
+<br/>
+<a href="main2.jsp">main2</a>
+<br/>
+<a href="board.jsp">board</a>
+<br/>
+<a href="session_cookie.jsp">session_cookie</a>
+</body>
+</html>
