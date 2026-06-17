@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+XML(Extensible Markup Language)
+- 데이터를 구조화해서 저장하고 전달하기 위한 마크업 언어
+-->
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!--
+태그 작성 순서
+ properties -> settings -> typealiases -> enviroments -> mappers
+-->
+<configuration>
+</configuration>
