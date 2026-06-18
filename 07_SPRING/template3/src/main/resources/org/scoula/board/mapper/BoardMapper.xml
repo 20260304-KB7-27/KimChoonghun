@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace는 반드시 경로 + 인터페이스 패키지명과 일치해야한다. -->
+<mapper namespace="org.scoula.board.mapper.BoardMapper">
+    <select id="getList" resultType="org.scoula.domain.BoardVO">
+        <![CDATA[
+        select * from tbl_board
+        ]]>
+    </select>
+    <select id="get" parameterType="long" resultType="org.scoula.domain.BoardVO">
+        select * from tbl_board_ex
+        where no = #{no}
+    </select>
+    <insert id="create" parameterType="org.scoula.domain.BoardVO">
+        insert into tbl_board_ex(title,content, writer)
+        values (#{title}, #{content}, #{writer})
+        <selectKey resultType="Long" keyProperty="no" keyColumn="no" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+    <update id="update" parameterType="org.scoula.domain.BoardVO">
+        update tbl_board_ex set
+        title = #{title},
+        content = #{content},
+        update_date = now(),
+        writer = #{writer}
+        where no = #{no}
+    </update>
+    <delete id="delete" parameterType="long">
+        delete from tbl_board_ex where no = #{no}
+    </delete>
+</mapper>
+
+<!--<mapper namespace="연결하고 싶은 인터페이스 경로 + 이름">-->
+<!--    <select id="추상 메서드 명" resultType="반환타입">-->
+
+<!--    </select>-->
+
+<!--</mapper>-->
