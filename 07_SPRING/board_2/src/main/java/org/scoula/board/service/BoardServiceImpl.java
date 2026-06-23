@@ -39,7 +39,7 @@ public class BoardServiceImpl implements BoardService {
         BoardDTO board = BoardDTO.of(mapper.get(no));
         return Optional
                 .ofNullable(board)
-                .orElseThrow(NoSuchElementException::new);
+                .orElseThrow(() -> new NoSuchElementException("해당 하는 게시글이 없습니다."));
 
     }
 
