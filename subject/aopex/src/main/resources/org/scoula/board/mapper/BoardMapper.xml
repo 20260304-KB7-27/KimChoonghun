@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.scoula.board.mapper.BoardMapper">
+    <!--
+    ResultMap
+    - DB 쿼리 결과의 컬럼과 자바 객체의 필드와 매핑
+    - 일반적인 경우 (Camel <-> Snake) 변환 정도일 경우에는 Mybatis가 자동으로 매핑 해주지만,
+    - Join과 같이 특수한 경우에는 직접 매핑이 필요함 (ResultMap)
+    -->
+    <resultMap id="attachmentMap" 		type="org.scoula.board.domain.BoardAttachmentVO">
+        <id column="ano" 				property="no"/>
+        <result column="bno"   			property="bno"/>
+        <result column="filename"		property="filename"/>
+        <result column="contentType"	property="contentType"/>
+        <result column="size"       	property="size"/>
+        <result column="a_reg_date" 	property="regDate"/>
+    </resultMap>
+
+    <resultMap id="boardMap" 			type="org.scoula.board.domain.BoardVO">
+        <id column="no"					property="no"/>
+        <result column="title"			property="title"/>
+        <result column="content"		property="content"/>
+        <result column="writer"			property="writer"/>
+        <result column="reg_date"		property="regDate"/>
+        <result column="update_date"	property="updateDate"/>
+        <collection property="attaches"	resultMap="attachmentMap"/>
+    </resultMap>
+
+
+    <insert id="create">
+        insert into tbl_board (title, content, writer)
+        values (#{title}, #{content}, #{writer})
+
+        <selectKey resultType="Long" keyProperty="no" keyColumn="no" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+
+
+    <update id="update">
+        update tbl_board set
+                             title = #{title},
+                             content = #{content},
+                             writer = #{writer},
+                             update_date = now()
+        where no = #{no}
+    </update>
+
+    <delete id="delete">
+        delete from tbl_board where no = #{no}
+    </delete>
+
+    <select id="getList" resultType="org.scoula.board.domain.BoardVO">
+		<![CDATA[
+        select * from tbl_board
+        order by no desc
+        ]]>
+	</select>
+
+    <!--	<select id="get" resultType="org.scoula.board.domain.BoardVO">-->
+    <!--		select * from tbl_board where no = #{no}-->
+    <!--	</select>-->
+
+    <select id="get" resultMap="boardMap">
+        select b.*, a.no as ano, a.bno, a.filename,
+               a.content_type as contentType, a.size, a.reg_date as a_reg_date
+        from tbl_board b
+                 left outer join tbl_board_attachment a
+                                 on b.no = a.bno
+        where b.no = #{no}
+        order by filename
+    </select>
+
+
+    <insert id="createAttachment">
+        insert into tbl_board_attachment(filename, file, content_type, size, bno)
+        values(#{filename}, #{file, jdbcType=BLOB}, #{contentType}, #{size}, #{bno})
+    </insert>
+
+    <select id="getAttachmentList" resultType="org.scoula.board.domain.BoardAttachmentVO">
+        select no, bno, filename, content_type as contentType, size, reg_date as regDate
+        from tbl_board_attachment
+        where bno = #{bno}
+        order by filename
+    </select>
+
+    <select id="getAttachment" resultType="org.scoula.board.domain.BoardAttachmentVO">
+        select no, bno, filename, file, content_type as contentType, size, reg_date as regDate
+        from tbl_board_attachment
+        where no = #{no}
+    </select>
+
+    <delete id="deleteAttachment">
+        delete from tbl_board_attachment
+        where no = #{no}
+    </delete>
+
+    <delete id="deleteAttachmentsByBno">
+        delete from tbl_board_attachment
+        where bno = #{bno}
+    </delete>
+</mapper>
