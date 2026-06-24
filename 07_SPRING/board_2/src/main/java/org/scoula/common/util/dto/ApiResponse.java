@@ -1,6 +1,9 @@
 package org.scoula.common.util.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /*
@@ -11,6 +14,9 @@ import lombok.Setter;
  */
 @Getter
 @Setter
+@Builder              // 1. 빌더 패턴 사용을 위해 추가!
+@NoArgsConstructor    // 2. JSON 직렬화/역직렬화를 위한 기본 생성자 추가
+@AllArgsConstructor   // 3. @Builder가 정상 작동하기 위한 모든 필드 생성자 추가
 public class ApiResponse<T> {
     private boolean success; // 성공여부
     private String message; // 성공시 "success" 실패시 에러메시지
@@ -18,7 +24,7 @@ public class ApiResponse<T> {
 
     // 성공
     public static <T> ApiResponse<T> ok(T data) {
-        return ApiResponse.builder()
+        return ApiResponse.<T>builder() // 제네릭 타입 명시
                 .success(true)
                 .message("success")
                 .data(data)

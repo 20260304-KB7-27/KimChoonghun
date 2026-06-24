@@ -58,3 +58,11 @@ Content-Type: application/json
 ###############################################
 DELETE {{baseUrl}}/{{no}}
 Accept: application/json
+
+###############################################
+GET https://api.openweathermap.org/data/2.5/weather?q=seoul&units=metric&APPID=b0ece00f9df841418d3b1715533a9efe&lang=kr
+
+###
+GET https://openweathermap.org/img/w/01d.png
+
+###
