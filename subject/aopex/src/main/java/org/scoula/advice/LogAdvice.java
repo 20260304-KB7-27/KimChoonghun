@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 public class LogAdvice {
     // Advice : Target에다가 적용시킬 동작들
 
-    //    @Before() Before Advice : 대상 메서드(Target) 실행 직전에 동작
+//    @Before() Before Advice : 대상 메서드(Target) 실행 직전에 동작
 //    execution : Target을 지정하는 방법
 //    execution([반환타입] [클래스풀네임].[메소드명])
     @Before(value =
@@ -23,8 +23,9 @@ public class LogAdvice {
                     "&& args(str1, str2)", argNames = "str1, str2"
     )
     public void logBeforeWithParam(String str1, String str2) {
-        log.info("===========================");
-        log.info("str1 : {} + str2 : {}", str1, str2);
+        log.info("Before Advice 동작합니다 ....!");
+        log.info("str1 : {}", str1);
+        log.info("str2 : {}", str2);
     }
 
     @AfterThrowing(value =

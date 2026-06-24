@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes={RootConfig.class})
 @Log4j2
@@ -19,5 +21,10 @@ class SampleServiceImplTest {
     @Test
     void doAdd() throws Exception {
         log.info(service.doAdd("123", "123"));
+    }
+
+    @Test
+    void doAdd2() throws Exception {
+        log.info(service.doAdd("123", "X"));
     }
 }
