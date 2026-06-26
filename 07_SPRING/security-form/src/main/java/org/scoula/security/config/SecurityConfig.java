@@ -1,22 +1,33 @@
 package org.scoula.security.config;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.security.web.csrf.CsrfFilter;
 
-
+/*
+    Sprint Security의 보안 설정 클래스
+ */
 @Configuration
 @EnableWebSecurity  // Spring Security 활성화
+@RequiredArgsConstructor
 @Slf4j
+@MapperScan(basePackages = {"org.scoula.security.account.mapper"})
+@ComponentScan(basePackages = {"org.scoula.security"})
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    private final UserDetailsService userDetailsService;
 
     public CharacterEncodingFilter encodingFilter() {
         CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
@@ -51,19 +62,27 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/security/logout"); // 로그아웃 성공 시 이동할 페이지
     }
 
+//    @Override
+//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//        // 관리자 계정
+//        auth.inMemoryAuthentication()
+//                .withUser("admin")
+//                .password("$2a$10$t5oZbmRtWxsx9vhU2kzkGuIqA8xn3vub4v0FcY9BnsS0D8XTyQxWm")
+//                .roles("ADMIN", "MEMBER");
+//
+//        //멤버 계정
+//        auth.inMemoryAuthentication()
+//                .withUser("member")
+//                .password("1234")
+//                .roles("MEMBER");
+//    }
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        // 관리자 계정
-        auth.inMemoryAuthentication()
-                .withUser("admin")
-                .password("$2a$10$t5oZbmRtWxsx9vhU2kzkGuIqA8xn3vub4v0FcY9BnsS0D8XTyQxWm")
-                .roles("ADMIN", "MEMBER");
+        auth
+                .userDetailsService(userDetailsService) // userDetailService
+                .passwordEncoder(passwordEncoder());
 
-        //멤버 계정
-        auth.inMemoryAuthentication()
-                .withUser("member")
-                .password("1234")
-                .roles("MEMBER");
     }
 
     @Bean
