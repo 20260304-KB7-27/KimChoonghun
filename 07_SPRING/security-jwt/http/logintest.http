@@ -1,0 +1,35 @@
+### 성공
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "1234"
+}
+
+###
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+"username": "admin",
+"password": "12345"
+}
+
+###
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "user3",
+  "password": "1234"
+}
+
+### eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc4Mjc5NjAyMywiZXhwIjoxNzgyNzk2MzIzLCJrZXkiOiJ2YWx1ZSJ9.-qjkix_deAKfQZttIuxzDkGXB5ahjRW9YTrqFUBqQ3YAX4ZgDUS608A3GUsQgQvN7sQiXfqqO1lP_j9OZmKwbA
+
+GET http://localhost:8080/member/3
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMyIsImlhdCI6MTc4Mjc5OTM1NiwiZXhwIjoxNzgyNzk5NjU2LCJrZXkiOiJ2YWx1ZSJ9.JHSleUxHWTG3x_Qp__FKu4yJWWCbXpki-nIbBE_yBKorAlbsJ1Qe4WH-7LkcUl2c-tCQ3HYzkdXQp7oVWRgDZA
+
+### 일반회원 토큰으로 admin 권한의 url에 요청 보내기
+GET http://localhost:8080/security/admin
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMyIsImlhdCI6MTc4Mjc5OTM1NiwiZXhwIjoxNzgyNzk5NjU2LCJrZXkiOiJ2YWx1ZSJ9.JHSleUxHWTG3x_Qp__FKu4yJWWCbXpki-nIbBE_yBKorAlbsJ1Qe4WH-7LkcUl2c-tCQ3HYzkdXQp7oVWRgDZA
