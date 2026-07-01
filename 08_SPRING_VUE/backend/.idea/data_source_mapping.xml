@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/41942ae4-aa96-49cc-97e7-d950b62dbfe0/console.sql" value="41942ae4-aa96-49cc-97e7-d950b62dbfe0" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/org/scoula/board/mapper/BoardMapper.xml" value="41942ae4-aa96-49cc-97e7-d950b62dbfe0" />
+  </component>
+</project>
