@@ -1,6 +1,8 @@
 <script setup>
 import { reactive, computed } from "vue";
-import config from "@/config";
+import config from "@/config";  
+import MenuGroup from "./menu/MenuGroup.vue";
+import AccountMenuGroup from "./menu/AccountMenuGroup.vue";
 
 let state = reactive({ isNavShow: false });
 
@@ -30,6 +32,8 @@ const toggleNavShow = () => (state.isNavShow = !state.isNavShow);
       </button>
       <div :class="navClass" id="collapsibleNavbar">
         <!-- 추후 작업 예정 -->
+         <MenuGroup :menus="config.menus"/>
+         <AccountMenuGroup/>
       </div>
     </div>
   </nav>

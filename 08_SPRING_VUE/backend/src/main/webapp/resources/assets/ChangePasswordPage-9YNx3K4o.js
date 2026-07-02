@@ -1,0 +1,1 @@
+import{c as e,o as t,t as n}from"./index-DT4gs-bn.js";var r={};function i(n,r){return e(),t(`h1`,null,`비밀번호 변경 페이지`)}var a=n(r,[[`render`,i]]);export{a as default};
