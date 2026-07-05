@@ -1,0 +1,20 @@
+{
+  "todoList": [
+    {
+      "title": "저녁 먹기",
+      "finished": false,
+      "id": "2"
+    },
+    {
+      "title": "헬스장 가기",
+      "finished": false,
+      "id": "DLALCihr6Ks"
+    },
+    {
+      "title": "교실 가기",
+      "finished": false,
+      "id": "tbcAI6imzMM"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
