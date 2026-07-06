@@ -19,6 +19,7 @@ import javax.sql.DataSource;
 @PropertySource({"classpath:/application.properties"})
 @MapperScan(basePackages = {
         "org.scoula.board.mapper" // 이거 안하면 wiring 안 됨
+
 }) // Mapper 스캔에 필요
 @ComponentScan(basePackages={ "org.scoula.board.service" })
 public class RootConfig {

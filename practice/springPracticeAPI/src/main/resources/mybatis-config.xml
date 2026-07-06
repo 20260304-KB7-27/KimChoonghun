@@ -8,7 +8,10 @@
         <setting name="mapUnderscoreToCamelCase" value="true" />
     </settings>
 
-    <typeAliases> <!-- 이게 있으면 따로 VO 앞에 패키지 안 붙여도 됨 -->
-        <package name="org.scoula.board.domain" />
+    <typeAliases> <!-- Tomcat 9 + package 스캔 VFS 버그 회피: 개별 등록 -->
+        <typeAlias type="org.scoula.board.domain.BoardVO" alias="BoardVO"/>
+        <typeAlias type="org.scoula.board.domain.BoardAttachmentVO" alias="BoardAttachmentVO"/>
+        <typeAlias type="org.scoula.security.account.domain.MemberVO" alias="MemberVO"/>
+        <typeAlias type="org.scoula.security.account.domain.AuthVO" alias="AuthVO"/>
     </typeAliases>
 </configuration>
